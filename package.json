@@ -1,36 +1,38 @@
 {
-  "name": "",
+  "name": "maxiliot-bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "",
-  "author": "",
-  "license": "",
+  "description": "It makes pizza!",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "build": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roboteich/maxilotbot.git"
+  },
+  "keywords": [
+    "raspberry",
+    "pi",
+    "express",
+    "node",
+    "react",
+    "imagination"
+  ],
+  "author": "@roboteich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roboteich/maxilotbot/issues"
+  },
+  "homepage": "https://github.com/roboteich/maxilotbot#readme",
   "dependencies": {
-    "babel-polyfill": "6.26.0",
-    "babel-preset-kyt-react": "0.3.0",
-    "compression": "1.6.2",
-    "express": "4.15.3",
-    "react": "15.3.0",
-    "react-dom": "15.3.0",
-    "react-router": "2.6.1",
-    "kyt": "0.9.0"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
   },
   "devDependencies": {
-    "enzyme": "2.4.1",
-    "react-addons-test-utils": "15.3.0",
-    "react-hot-loader": "3.0.0-beta.6"
-  },
-  "scripts": {
-    "dev": "kyt dev",
-    "build": "kyt build",
-    "start": "node build/server/main.js",
-    "proto": "kyt proto",
-    "test": "kyt test",
-    "test-watch": "kyt test -- --watch",
-    "test-coverage": "kyt test -- --coverage",
-    "lint": "npm run lint-script && npm run lint-style",
-    "lint-script": "kyt lint-script",
-    "lint-style": "kyt lint-style",
-    "kyt:help": "kyt --help"
+    "concurrently": "^4.0.1"
   }
 }
