@@ -8,7 +8,8 @@
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "build": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "scp -r ./client/build pi@192.168.4.1:/home/pi/Maxliotbot/client && scp ./package.json ./server.js pi@192.168.4.1:/home/pi/Maxliotbot"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,8 @@
   "homepage": "https://github.com/roboteich/maxilotbot#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "react-redux": "^6.0.0"
   },
   "devDependencies": {
     "concurrently": "^4.0.1"

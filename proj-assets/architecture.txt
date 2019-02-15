@@ -1,0 +1,32 @@
+* Routes * 
+- Welcome (maybe reuse those crazy animations)
+- choose
+- cook
+- eat
+- rate
+- thanks
+
+* Components *
+- Same as routes
+- Transitions?
+- Audio Player
+
+- State
+- route
+-- introClip
+-- outroClip
+-- foods
+---- cookedImage
+---- defaultImage
+---- name
+---- audio
+-- cook
+--- totalduration
+--- currentTime
+--- audio
+
+* Actions
+- set food
+- cook food
+- rate food
+- restart
