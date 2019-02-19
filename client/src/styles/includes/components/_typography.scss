@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'BPchildLefty';
+  src: url('../assets/fonts/BPchildLefty.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+body {
+  font-family: BPchildLefty;
+  opacity: 0.95;
+  mix-blend-mode: darken;
+  color: black;
+  font-weight: 700;
+  font-size: $font-size-md;
+}

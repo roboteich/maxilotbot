@@ -1,0 +1,65 @@
+@mixin glow-btn($color) {
+  color: darken($color, 20%);
+  background-color: $color;
+  animation: glow $duration-medium $easeOutSine alternate infinite;
+  box-shadow: 
+    inset 0px 0px 20px 7px darken($color, 25%),
+    inset 0px -.5em 4em white,
+    inset 0px 0px .75em $color,
+    0px 0px 5px 2px darken($color, 25%),
+    0px 0px 3em 10px $color;
+  
+  &:active {
+    box-shadow: 
+    inset 0px 0px 20px 7px darken($color, 45%),
+    inset 0px -.5em 4em darken(white, 20%),
+    inset 0px 0px .75em darken($color, 20%),
+    0px 0px 5px 2px darken($color, 45%),
+    0px 0px 3em 10px $color;
+  }
+}
+
+@keyframes glow {
+  from {
+    filter: brightness(1)
+  }
+  to {
+    filter: brightness(1.1)
+  }
+}
+
+.btn {
+  transition: all $duration-medium;
+  user-select: none;
+  position:relative;
+  display: block;
+  padding: 50px;
+  text-decoration: none;
+  font-size: $font-size-sm;
+  border-radius: 50%;
+  line-height: 145px;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+
+  &.btn-primary {
+    @include glow-btn($green);
+  }
+
+  &.btn-error {
+    @include glow-btn($red);
+  }
+  
+  &.btn-warn {
+    @include glow-btn($yellow);
+  }
+
+  &.btn-alert {
+    @include glow-btn($orange);
+  }
+
+  &.btn-info {
+    @include glow-btn($blue);
+  }
+
+}

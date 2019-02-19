@@ -1,0 +1,121 @@
+.start-screen {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  .start-screen__logo,
+  .start-screen__schprockets,
+  .start-screen__foods {
+    flex-grow: 0;
+  }
+}
+
+.start-screen__logo {
+  mix-blend-mode: color-burn;
+  margin-bottom: -2em;
+  margin-top: -3em;
+
+  .start_screen__logo--graphic {
+    display:block;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+.start-screen__foods {
+  overflow:hidden;
+  width: 100vw;
+  mix-blend-mode: darken;
+
+  .start-screen__foods--slider {
+    width: 200vw;
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    animation: slide 10s linear infinite;
+    .food {
+      display: block;
+      width: 15%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      min-height: 80px;
+    }
+  }
+}
+
+.start-screen__schprockets {
+  display: flex;
+  flex-direction: row;
+
+  &.start-screen__schprockets--1 {
+    padding-left: 40%;
+    transform: scale3d(1.5, 1.5, 1);
+
+  }
+
+  &.start-screen__schprockets--2 {
+    margin-top: -3em;
+    margin-left:-1em;
+  }
+
+  .schprocket {
+    flex-grow: 0;
+    padding-right: 2%;
+    height:2em;
+
+    .schprocket__img {
+      height: 100%;
+      animation: spin $duration-long linear infinite;
+    }
+    
+    &.schprocket--1 .schprocket__img {
+      animation-direction: reverse;
+      transform-origin: 42% 47%;
+    }
+    
+    &.schprocket--2 { margin-top: -20px;};
+    &.schprocket--2 .schprocket__img{
+      transform-origin: 43% 41%;
+    }
+
+    &.schprocket--3 .schprocket__img{
+      animation-direction: reverse;
+      transform-origin: 45% 49%;
+    }
+
+    &.schprocket--4 { margin-top: 18px; }
+    &.schprocket--4 .schprocket__img{
+      transform-origin: 40% 49%;
+    }
+  }
+}
+
+.start-screen__start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 0.25;
+  margin-top: -2em;
+}
+
+@keyframes spin {
+  from { 
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translate3D(-50%, 0, 0);
+  }
+  to {
+    transform: translate3D(0, 0, 0);
+  }
+}

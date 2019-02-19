@@ -1,16 +1,14 @@
 
-import Choose from './choose';
-import Cook from './cook';
-import Eat from './eat';
-import Rate from './rate';
-import Thanks from './thanks';
-import Welcome from './welcome';
+import Menu from './menu.js';
+import Cooking from './cooking.js';
+import Rating from './ratings.js';
+import Thanks from './thanks.js';
+import Start from './start.js';
 
 export default {
-  Choose,
-  Cook,
-  Eat,
-  Rate,
-  Thanks,
-  Welcome
+  Start,
+  Menu,
+  Cooking,
+  Rating,
+  Thanks
 }
