@@ -21,7 +21,8 @@ class App extends Component {
               key={location.key}
             >
                 <Switch location={location}>
-                  <Route exact path="/" component={ Routes.Start }/>
+                  <Route exact path="/" component={ Routes.Power }/>
+                  <Route exact path="/start" component={ Routes.Start }/>
                   <Route dexact path="/menu" component={ Routes.Menu }/>
                   <Route path="/cooking/:food" component={ Routes.Cooking }/>
                   <Route exact path="/ratings" component={ Routes.Rating }/>

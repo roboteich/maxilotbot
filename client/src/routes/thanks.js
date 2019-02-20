@@ -6,7 +6,7 @@ const Thanks = () => (
     <div className="face">
       <div className="thanks-screen screen">
         <h1>Thanks</h1>
-        <Link to="/">I want seconds</Link>
+        <Link to="/start">I want seconds</Link>
       </div>
   </div>
 </div>
