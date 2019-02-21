@@ -10,20 +10,13 @@ import hamburger from '../assets/images/hamburger.png';
 import pancakes from '../assets/images/pancakes.png';
 import pizza from '../assets/images/pizza.png';
 import logo from '../assets/images/logotype.png';
+import SoundContext from '../actions/sound-context';
 
 class Start extends React.Component  {
-
-  constructor(props) {
-    super(props)
-    this.soundRef = React.createRef();
-  }
+  static contextType = SoundContext;
 
   componentDidMount() {
-    this.soundRef.current.play();
-  }
-
-  componentWillUnmount() {
-    this.soundRef.current.pause();
+    this.context.playSound({src:startSound, loop:true});
   }
   
   render() {
@@ -67,7 +60,6 @@ class Start extends React.Component  {
             </div>
           </div>
         </div>
-        <audio ref={this.soundRef} loop src={startSound}/>
       </div>
     );
   }
